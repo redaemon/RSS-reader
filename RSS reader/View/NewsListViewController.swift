@@ -16,13 +16,10 @@ class NewsListViewController: UITableViewController {
     @IBOutlet weak var categoryButton: UIBarButtonItem!
     @IBOutlet weak var cancelCategoryChangeButton: UIBarButtonItem!
     
-    
     var toolBar = UIToolbar()
     var pickerView  = UIPickerView()
     var pickerViewIsOpen: Bool = false
     var isFiltered: Bool = false
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,8 +63,6 @@ class NewsListViewController: UITableViewController {
             
             self.tableView.reloadData()
         }
-
-
     }
 
     func loadingDataWithDelay() {
@@ -82,6 +77,8 @@ class NewsListViewController: UITableViewController {
             
         }
     }
+    
+    // MARK: - Table View Data Source
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel?.numberOfNews(isFiltered: isFiltered, filterCategory: selectedGroup) ?? 0

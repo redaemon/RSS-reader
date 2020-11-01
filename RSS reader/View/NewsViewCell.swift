@@ -16,7 +16,7 @@ class NewsViewCell: UITableViewCell {
         willSet(viewModel) {
             guard let viewModel = viewModel else { return }
             newsTitleLabel.text = viewModel.title
-            newsPubDateLabel.text = viewModel.publicationDate
+            newsPubDateLabel.text = viewModel.publicationDate.components(separatedBy: "+").first ?? "no date"
         }
     }
     

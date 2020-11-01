@@ -16,7 +16,7 @@ class NewsViewCellViewModel: NewsViewCellViewModelType {
     }
     
     var publicationDate: String {
-        return news.publicationDate.components(separatedBy: "+").first ?? "no date"
+        return news.publicationDate
     }
     
     var category: String {
